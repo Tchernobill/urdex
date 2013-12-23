@@ -1,5 +1,6 @@
 <?php
 	include_once('models/fonctions.php');
+
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -95,8 +96,7 @@
 
             <?php
             //MODIFICATIONS APPORTE PAR MANON DIM. 22DEC - REMPLIS LE SELECT AVEC LES ITEMS DE LA BASE DE DONNEES
-            $conn = new mysqli('urdex.db.10723639.hostedresource.com', 'urdex', 'Poutine08!', 'urdex')
-            or die ('Cannot connect to db');
+            $conn = connect() or die ('Cannot connect to db');
 
             $result = $conn->query("SELECT lvl_id, lvl_short_desc FROM urbex_levels");
 
@@ -115,9 +115,6 @@
             //FIN DE MODIFICATIONS
             ?>
           </div>
-
-
-
 
           <div class="form-group">
               <button type="submit" class="btn btn-success">Soumetre</button>

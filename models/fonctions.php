@@ -84,7 +84,7 @@ function connect()
  * - Phone; XXX - xxx - xxxx (Regex power baby !!)
  * @author Yan
  * @version 0.7
- * @return connection object
+ * @return int
  */
 function add_user(){
 	$mem_name=$_POST['mem_name'];
@@ -112,6 +112,8 @@ function add_user(){
 
         // call the stored procedure
         $stmt->execute();
+
+        //Yan: Cette nouvelle fonction ne semble pas retourner le ID du membre nouvellement cree, Ca prend le ID pour validé dans la boire verte que ca a bien fonctioné.
 
         /**
         $req = $bdd->prepare('INSERT INTO members(mem_name, mem_user_name, mem_password, mem_email, mem_phone, fk_mem_lvl, fk_mem_access_id) VALUES(:mem_name, :mem_user_name, :mem_password, :mem_email, :mem_phone, :fk_mem_lvl, :fk_mem_access_id)') or die(print_r($bdd->errorInfo()));
